@@ -1,0 +1,26 @@
+main {
+	& .content {
+		flex: 9;
+
+		& .cards {
+			display: flex;
+			flex-wrap: wrap;
+
+			& .card {
+				width: 50%;
+				padding: 15px;
+			}
+		}
+
+		& ul {
+			background-color: rosybrown;
+			list-style: none;
+		}
+	}
+
+	aside {
+		background-color: silver;
+		padding: 15px;
+		flex: 3;
+	}
+}

@@ -21,18 +21,18 @@ export default function BasicTextFields() {
 		title: 'test1-title',
 		message: 'test1-message',
 		creator: 'test1-creator',
-		tags: ['test1-tag1', 'test1-tag2', 'test1-tag3'],
+		tag: 'test1-tag1',
 	});
 
-	const sendingForm = (e) => {
-		e.preventDefault();
+	// const sendingForm = (e) => {
+	// 	e.preventDefault();
 
-		// console.log(newPost);
-		async function posting(newPost) {
-			await axios.post('http://localhost:5000/posts', newPost);
-		}
-		posting();
-	};
+	// 	// console.log(newPost);
+	// 	async function posting(newPost) {
+	// 		await axios.post('http://localhost:5000/posts', newPost);
+	// 	}
+	// 	posting();
+	// };
 
 	const classes = useStyles();
 
@@ -61,10 +61,10 @@ export default function BasicTextFields() {
 			/>
 			<TextField
 				id="outlined-basic"
-				name="tags"
-				label="Tags"
+				name="tag"
+				label="Tag"
 				variant="outlined"
-				value={newPost.text}
+				value={newPost.tag}
 			/>
 			<Button type="submit" size="large" variant="outlined" color="secondary">
 				Secondary

@@ -1,0 +1,40 @@
+header {
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	background-color: rgba(51, 73, 145, 0.75);
+	color: white;
+
+	display: flex;
+	justify-content: center;
+
+	& .logo,
+	.links,
+	.login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	& .logo {
+		flex: 2;
+	}
+
+	& .links {
+		flex: 8;
+		height: 70px;
+
+		& ul {
+			list-style: none;
+			display: flex;
+
+			& li {
+				margin: 0 20px;
+			}
+		}
+	}
+
+	& .login {
+		flex: 2;
+	}
+}
