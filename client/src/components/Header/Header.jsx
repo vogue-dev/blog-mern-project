@@ -10,9 +10,10 @@ const Header = () => {
 					<div className="logo">Logo</div>
 					<div className="links">
 						<ul>
-							<li>First Link</li>
-							<li>Second Link</li>
-							<li>Third Link</li>
+							<li>Дешевые билеты</li>
+							<li>Что посетить - Украина</li>
+							<li>Новости</li>
+							<li>Годнота/Блог</li>
 						</ul>
 					</div>
 					<div className="login">Login</div>

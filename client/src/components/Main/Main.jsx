@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import Card from '../Card/Card.jsx';
+import Aside from '../Aside/Aside.jsx';
+import { cards } from '../../db';
+
 import './main.scss';
 
 const Main = () => {
@@ -23,53 +27,17 @@ const Main = () => {
 				<div className="row">
 					<div className="content">
 						<div className="cards">
-							<div className="card">
-								<div className="card__wrapper">
-									<img
-										src="https://media.gq.ru/photos/5d9f7bce98ca7700089b131f/16:9/w_1920,c_limit/fd09c4ec7d955e4cfc33c5c23fd3d8dcd9cd368e.jpeg"
-										alt="abc"></img>
-									<div className="card--title">Kiev --> London</div>
-									<div className="card--price">950 $</div>
-								</div>
-							</div>
-
-							<div className="card">
-								<div className="card__wrapper">
-									<img
-										src="https://media.gq.ru/photos/5d9f7bce98ca7700089b131f/16:9/w_1920,c_limit/fd09c4ec7d955e4cfc33c5c23fd3d8dcd9cd368e.jpeg"
-										alt="abc"></img>
-									<div className="card--title">Kiev --> London</div>
-									<div className="card--price">950 $</div>
-								</div>
-							</div>
-
-							<div className="card">
-								<div className="card__wrapper">
-									<img
-										src="https://media.gq.ru/photos/5d9f7bce98ca7700089b131f/16:9/w_1920,c_limit/fd09c4ec7d955e4cfc33c5c23fd3d8dcd9cd368e.jpeg"
-										alt="abc"></img>
-									<div className="card--title">Kiev --> London</div>
-									<div className="card--price">950 $</div>
-								</div>
-							</div>
-
-							<div className="card">
-								<div className="card__wrapper">
-									<img
-										src="https://media.gq.ru/photos/5d9f7bce98ca7700089b131f/16:9/w_1920,c_limit/fd09c4ec7d955e4cfc33c5c23fd3d8dcd9cd368e.jpeg"
-										alt="abc"></img>
-									<div className="card--title">Kiev --> London</div>
-									<div className="card--price">950 $</div>
-								</div>
-							</div>
+							{cards.map((card) => (
+								<Card card={card} key={card.id} />
+							))}
 						</div>
-						<ul>
+						{/* <ul>
 							{data.map((e) => (
 								<li key={e.id}>{e.title}</li>
 							))}
-						</ul>
+						</ul> */}
 					</div>
-					<aside></aside>
+					<Aside />
 				</div>
 			</div>
 		</main>
