@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function NestedList() {
+const LeftMenuNavigation = () => {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
 
@@ -79,4 +79,6 @@ export default function NestedList() {
 			</Collapse>
 		</List>
 	);
-}
+};
+
+export default LeftMenuNavigation;

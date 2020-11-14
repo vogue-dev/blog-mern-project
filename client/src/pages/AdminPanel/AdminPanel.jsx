@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuNavigation from './MenuNavigation/MenuNavigation.jsx';
+import LeftMenuNavigation from './LeftMenuNavigation/LeftMenuNavigation.jsx';
 // import { Route, Switch } from 'react-router-dom';
 
 // import AddPost from '../../components/AdminPanel/AddPost/AddPost.jsx';
@@ -12,7 +12,7 @@ const AdminPanel = () => {
 		<>
 			<div className="admin-panel row">
 				<div className="left">
-					<MenuNavigation />
+					<LeftMenuNavigation />
 				</div>
 			</div>
 		</>

@@ -7,7 +7,6 @@ import Blog from './pages/Blog/Blog.jsx';
 import News from './pages/News/News.jsx';
 
 import Header from './components/Header/Header.jsx';
-import MenuNavigation from './pages/AdminPanel/MenuNavigation/MenuNavigation.jsx';
 import AdminPanel from './pages/AdminPanel/AdminPanel';
 import AddPost from './pages/AdminPanel/AddPost/AddPost.jsx';
 import DeletePost from './pages/AdminPanel/DeletePost/DeletePost.jsx';
@@ -23,10 +22,9 @@ function App() {
 				<Route path="/blog" exact component={Blog} />
 				<Route path="/news" exact component={News} />
 
-				<Route path="/admin" exact component={AdminPanel} />
+				<Route path="/admin" component={AdminPanel} />
 
 				<div className="row">
-					<MenuNavigation />
 					<div className="right-c">
 						<Route path="/admin/add-post" exact component={AddPost} />
 						<Route path="/admin/delete-post" exact component={DeletePost} />
