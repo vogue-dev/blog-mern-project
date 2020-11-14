@@ -14,9 +14,9 @@ const Header = () => {
 					</div>
 					<div className="links">
 						<ul>
-							{headerLinks.map((i) => (
-								<Link to={`${i.link}`}>
-									<li>{i.value}</li>
+							{headerLinks.map(({ link, value }, i) => (
+								<Link to={link} key={i}>
+									<li>{value}</li>
 								</Link>
 							))}
 						</ul>
