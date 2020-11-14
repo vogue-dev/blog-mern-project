@@ -3,18 +3,19 @@ import axios from 'axios';
 
 import Card from '../Card/Card.jsx';
 import Aside from '../Aside/Aside.jsx';
-import { cards } from '../../db';
+
+// import { cards } from '../../db';
 
 import './main.scss';
 
 const Main = () => {
-	const url = 'http://localhost:5000/posts';
+	const baseUrl = 'http://localhost:5000/posts';
 	const [data, setData] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
 		const fetchingData = async () => {
-			await axios.get(url).then((result) => setData(result.data));
+			await axios.get(baseUrl).then((result) => setData(result.data));
 			await setIsLoaded(true);
 		};
 
@@ -27,7 +28,7 @@ const Main = () => {
 				<div className="row">
 					<div className="content">
 						<div className="cards">
-							{cards.map((card) => (
+							{data.map((card) => (
 								<Card card={card} key={card.id} />
 							))}
 						</div>

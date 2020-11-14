@@ -2,7 +2,7 @@ header {
 	position: fixed;
 	width: 100%;
 	top: 0px;
-	background-color: rgba(51, 73, 145, 0.75);
+	background-color: rgba(51, 73, 145, 1);
 	color: white;
 	z-index: 1030;
 
@@ -37,5 +37,14 @@ header {
 
 	& .login {
 		flex: 2;
+	}
+
+	& a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			color: gray;
+		}
 	}
 }

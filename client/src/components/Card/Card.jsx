@@ -14,8 +14,8 @@ const Card = ({ card }) => {
 					</div>
 					<div className="card__body--rating"></div>
 					<div className="card__body--details">
-						<div className="date">13 нояб 2020</div>
-						<div className="reading">Чтение: {readingTime} мин</div>
+						<div className="date">Самолет + Автобус</div>
+						<div className="reading">1 Пересадка</div>
 					</div>
 				</div>
 
