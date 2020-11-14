@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Main from '../../components/Main/Main';
+import Posts from './Posts/Posts';
 import Footer from '../../components/Footer/Footer';
 
-const MainPage = () => {
+const Ukraine = () => {
 	return (
 		<>
-			<Main />
+			<Posts />
 			<Footer />
 		</>
 	);
 };
 
-export default MainPage;
+export default Ukraine;

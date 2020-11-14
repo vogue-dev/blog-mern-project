@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import Card from '../Card/Card.jsx';
-import Aside from '../Aside/Aside.jsx';
+import Card from '../../../components/Card/Card.jsx';
+import Aside from '../../../components/Aside/Aside.jsx';
 
 // import { cards } from '../../db';
 
-import './main.scss';
+import './europe-posts.scss';
 
-const Main = () => {
+const Posts = () => {
 	const baseUrl = 'http://localhost:5000/posts';
 	const [data, setData] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -47,4 +47,4 @@ const Main = () => {
 	);
 };
 
-export default Main;
+export default Posts;

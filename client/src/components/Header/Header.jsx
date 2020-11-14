@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { headerLinks } from '../../utils/constants.js';
 
 import './header.scss';
 
@@ -13,10 +14,11 @@ const Header = () => {
 					</div>
 					<div className="links">
 						<ul>
-							<li>Дешевые билеты</li>
-							<li>Что посетить - Украина</li>
-							<li>Новости</li>
-							<li>Годнота/Блог</li>
+							{headerLinks.map((i) => (
+								<Link to={`${i.link}`}>
+									<li>{i.value}</li>
+								</Link>
+							))}
 						</ul>
 					</div>
 					<div className="login">

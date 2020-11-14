@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '../../components/Header/Header.jsx';
-import MenuNavigation from '../../components/AdminPanel/MenuNavigation/MenuNavigation.jsx';
+import MenuNavigation from './MenuNavigation/MenuNavigation.jsx';
 // import { Route, Switch } from 'react-router-dom';
 
 // import AddPost from '../../components/AdminPanel/AddPost/AddPost.jsx';
