@@ -19,13 +19,16 @@ app.use('/posts', postRoutes);
 app.use('/ukraine', ukraineRoutes);
 
 mongoose
-    .connect(process.env.MONGODB_URI || CONNECTION_URL, {
+    .connect(CONNECTION_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
     })
+
     .then(() =>
-        app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`))
+        app.listen(process.env.PORT || 5000, () =>
+            console.log(`Server Running on Port: http://localhost:${PORT}`)
+        )
     )
     .catch((error) => console.log(`${error} did not connect`));
 
