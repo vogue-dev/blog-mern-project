@@ -9,25 +9,25 @@ import DeletePost from './pages/AdminPanel/DeletePost/DeletePost.jsx';
 import { routes } from './utils/routes.js';
 
 function App() {
-    return (
-        <>
-            <Header />
-            <Switch>
-                {routes.map(({ path, exact, component, name }) => (
-                    <Route path={path} exact={exact} component={component} key={name} />
-                ))}
+  return (
+    <>
+      <Header />
+      <Switch>
+        {routes.map(({ path, exact, component, name }) => (
+          <Route path={path} exact={exact} component={component} key={name} />
+        ))}
 
-                <div className="row">
-                    <LeftMenuNavigation />
-                    <div className="right-c">
-                        <Route path="/admin/add-post" exact component={AddPost} />
-                        <Route path="/admin/delete-post" exact component={DeletePost} />
-                    </div>
-                </div>
-            </Switch>
-            <Footer />
-        </>
-    );
+        <div className="row">
+          <LeftMenuNavigation />
+          <div className="right-c">
+            <Route path="/admin/add-post" exact component={AddPost} />
+            <Route path="/admin/delete-post" exact component={DeletePost} />
+          </div>
+        </div>
+      </Switch>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
