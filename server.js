@@ -31,6 +31,6 @@ mongoose
 
 mongoose.set('useFindAndModify', false);
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('client/build'));
-// }
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
