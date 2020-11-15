@@ -5,10 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "nodemon server.js",
-        "build": "cd client && npm run build",
-        "install-client": "cd client && npm intall",
-        "heroku-postbuild": "npm run install-client && npm run build"
+        "start": "node server.js",
+        "build": "cd client/ && npm install && npm run build"
     },
     "keywords": [],
     "author": "",
