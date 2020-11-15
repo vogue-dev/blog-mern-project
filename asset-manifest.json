@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/starwars-app/static/css/main.9286f94d.chunk.css",
-    "main.js": "/starwars-app/static/js/main.34f27b68.chunk.js",
-    "main.js.map": "/starwars-app/static/js/main.34f27b68.chunk.js.map",
-    "runtime-main.js": "/starwars-app/static/js/runtime-main.841df33f.js",
-    "runtime-main.js.map": "/starwars-app/static/js/runtime-main.841df33f.js.map",
-    "static/js/2.4be376f5.chunk.js": "/starwars-app/static/js/2.4be376f5.chunk.js",
-    "static/js/2.4be376f5.chunk.js.map": "/starwars-app/static/js/2.4be376f5.chunk.js.map",
-    "index.html": "/starwars-app/index.html",
-    "static/css/main.9286f94d.chunk.css.map": "/starwars-app/static/css/main.9286f94d.chunk.css.map",
-    "static/js/2.4be376f5.chunk.js.LICENSE.txt": "/starwars-app/static/js/2.4be376f5.chunk.js.LICENSE.txt"
+    "main.css": "/blog-mern-project/static/css/main.9286f94d.chunk.css",
+    "main.js": "/blog-mern-project/static/js/main.34f27b68.chunk.js",
+    "main.js.map": "/blog-mern-project/static/js/main.34f27b68.chunk.js.map",
+    "runtime-main.js": "/blog-mern-project/static/js/runtime-main.8e8c1a08.js",
+    "runtime-main.js.map": "/blog-mern-project/static/js/runtime-main.8e8c1a08.js.map",
+    "static/js/2.4be376f5.chunk.js": "/blog-mern-project/static/js/2.4be376f5.chunk.js",
+    "static/js/2.4be376f5.chunk.js.map": "/blog-mern-project/static/js/2.4be376f5.chunk.js.map",
+    "index.html": "/blog-mern-project/index.html",
+    "static/css/main.9286f94d.chunk.css.map": "/blog-mern-project/static/css/main.9286f94d.chunk.css.map",
+    "static/js/2.4be376f5.chunk.js.LICENSE.txt": "/blog-mern-project/static/js/2.4be376f5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.841df33f.js",
+    "static/js/runtime-main.8e8c1a08.js",
     "static/js/2.4be376f5.chunk.js",
     "static/css/main.9286f94d.chunk.css",
     "static/js/main.34f27b68.chunk.js"
