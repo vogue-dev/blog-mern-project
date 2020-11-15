@@ -7,6 +7,9 @@ import postRoutes from './routes/posts.js';
 import ukraineRoutes from './routes/postsUA.js';
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+const CONNECTION_URL =
+    'mongodb+srv://Vogue:13524qetwrVogue@cluster0.kxggw.mongodb.net/mydata?retryWrites=true&w=majority';
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
@@ -15,12 +18,8 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use('/ukraine', ukraineRoutes);
 
-const CONNECTION_URL =
-    'mongodb+srv://Vogue:13524qetwrVogue@cluster0.kxggw.mongodb.net/mydata?retryWrites=true&w=majority';
-const PORT = process.env.PORT || 5000;
-
 mongoose
-    .connect(CONNECTION_URL, {
+    .connect(process.env.MONGODB_URI || CONNECTION_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
