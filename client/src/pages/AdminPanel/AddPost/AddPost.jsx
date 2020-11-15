@@ -22,7 +22,7 @@ const AddPost = () => {
 
         console.log('selectType', selectType);
         console.log('state', state);
-        axios.post(`http://localhost:5000/${selectType}`, state);
+        axios.post(`/${selectType}`, state);
     };
 
     const onClickSetSelectType = ({ target }) => {
