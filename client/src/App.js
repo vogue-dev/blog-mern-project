@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
 import LeftMenuNavigation from './pages/AdminPanel/LeftMenuNavigation/LeftMenuNavigation.jsx';
 import AddPost from './pages/AdminPanel/AddPost/AddPost.jsx';
 import DeletePost from './pages/AdminPanel/DeletePost/DeletePost.jsx';
@@ -24,6 +25,7 @@ function App() {
 					</div>
 				</div>
 			</Switch>
+			<Footer />
 		</>
 	);
 }

@@ -28,8 +28,8 @@ const Posts = () => {
 				<div className="row">
 					<div className="content">
 						<div className="cards">
-							{data.map((card) => (
-								<Card card={card} key={card.id} />
+							{data.map((card, i) => (
+								<Card card={card} key={i} />
 							))}
 						</div>
 						{/* <ul>

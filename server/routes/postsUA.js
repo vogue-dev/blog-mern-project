@@ -1,10 +1,9 @@
 import express from 'express';
-
-import { getPostsUA } from '../controllers/postsUA.js';
+import { getPostsUA, createPostUA } from '../controllers/postsUA.js';
 
 const router = express.Router();
 
 router.get('/', getPostsUA);
-// router.post('/', createPostsUA);
+router.post('/', createPostUA);
 
 export default router;

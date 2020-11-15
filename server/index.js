@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import postRoutes from './routes/posts.js';
-import postsUARoutes from './routes/postsUA.js';
+import ukraineRoutes from './routes/postsUA.js';
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 app.use('/posts', postRoutes);
-app.use('/ukraine', postsUARoutes);
+app.use('/ukraine', ukraineRoutes);
 
 const CONNECTION_URL =
 	'mongodb+srv://Vogue:13524qetwrVogue@cluster0.kxggw.mongodb.net/mydata?retryWrites=true&w=majority';

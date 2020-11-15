@@ -3,7 +3,7 @@ import Posts from '../models/posts.js';
 export const getPosts = async (req, res) => {
 	try {
 		const postMessages = await Posts.find();
-		console.log('TEST getPosts', postMessages);
+		console.log('getPostsEU', postMessages);
 
 		res.status(200).json(postMessages);
 	} catch (error) {

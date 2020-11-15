@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const postsUkraineSchema = mongoose.Schema({
+const postsUASchema = mongoose.Schema({
 	title: String,
 	titleStatus: {
 		tyle: String,
@@ -28,6 +28,6 @@ const postsUkraineSchema = mongoose.Schema({
 	},
 });
 
-const PostsUA = mongoose.model('ukraine', postsUkraineSchema);
+const PostsUA = mongoose.model('ua-posts', postsUASchema);
 
 export default PostsUA;
