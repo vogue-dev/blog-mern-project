@@ -9,7 +9,7 @@ import Aside from '../../../components/Aside/Aside.jsx';
 import './ukraine-posts.scss';
 
 const Posts = () => {
-    const baseUrl = '/ukraine';
+    const baseUrl = 'http://localhost:5000/ukraine';
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 

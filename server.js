@@ -8,8 +8,8 @@ import ukraineRoutes from './routes/postsUA.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-// const CONNECTION_URL =
-//     'mongodb+srv://Vogue:13524qetwrVogue@cluster0.kxggw.mongodb.net/mydata?retryWrites=true&w=majority';
+const CONNECTION_URL =
+    'mongodb+srv://Vogue:13524qetwrVogue@cluster0.kxggw.mongodb.net/mydata?retryWrites=true&w=majority';
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
@@ -31,6 +31,6 @@ mongoose
 
 mongoose.set('useFindAndModify', false);
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('client/build'));
+// }
