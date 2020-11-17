@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
+import { baseUrl } from '../../../utils/constants.js';
+
 const AddPost = () => {
     let [state, setState] = useState({});
     let [selectType, setSelectType] = useState('posts');
@@ -19,10 +21,7 @@ const AddPost = () => {
 
     const addNewPost = (e) => {
         e.preventDefault();
-
-        console.log('selectType', selectType);
-        console.log('state', state);
-        axios.post(`/${selectType}`, state);
+        axios.post(`${baseUrl}/${selectType}`, state);
     };
 
     const onClickSetSelectType = ({ target }) => {
