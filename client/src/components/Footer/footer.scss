@@ -6,10 +6,12 @@ footer {
     & ul {
         list-style: none;
         font-weight: bold;
+        text-transform: uppercase;
 
         & li {
             font-weight: normal;
-            margin: 8px 0;
+            margin: 16px 0;
+            text-transform: none;
         }
     }
 
@@ -17,10 +19,29 @@ footer {
         padding: 50px 15px;
         display: flex;
         justify-content: center;
-        align-items: start;
+        align-items: flex-start;
 
         &--left-section {
             flex: 7;
+
+            & .footer__content--logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            & .footer__content--socials > ul {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & svg {
+                    margin: 0 16px;
+                    height: 32px;
+                    width: 32px;
+                }
+            }
         }
 
         &--right-section {

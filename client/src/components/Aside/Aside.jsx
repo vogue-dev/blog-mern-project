@@ -7,22 +7,22 @@ import ButtonCustom from './Filter/Button/ButtonCustom.jsx';
 import './aside.scss';
 
 const Aside = () => {
-	return (
-		<aside>
-			<div className="filter">
-				<form className="">
-					<InputField label="Откуда" />
-					<InputField label="Куда" />
+    return (
+        <div className="aside">
+            <div className="filter">
+                <form className="">
+                    <InputField label="Откуда" />
+                    <InputField label="Куда" />
 
-					{/* <DatePickerField label="Отправка" />
+                    {/* <DatePickerField label="Отправка" />
 							<DatePickerField label="Прибытие" /> */}
-					{/* <DatePickerField direction={'from'} placeholder="Дата отбытия" />
+                    {/* <DatePickerField direction={'from'} placeholder="Дата отбытия" />
 							<DatePickerField direction={'to'} placeholder="Дата прилета" /> */}
-					<ButtonCustom text="Поиск" />
-				</form>
-			</div>
-		</aside>
-	);
+                    <ButtonCustom text="Поиск" />
+                </form>
+            </div>
+        </div>
+    );
 };
 
 export default Aside;

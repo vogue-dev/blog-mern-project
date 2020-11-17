@@ -4,6 +4,7 @@ import Main from '../pages/Main/Main.jsx';
 import Blog from '../pages/Blog/Blog.jsx';
 import News from '../pages/News/News.jsx';
 import AdminPanel from '../pages/AdminPanel/AdminPanel.jsx';
+import PostInfoDetailed from '../pages/PostInfoDetailed/PostInfoDetailed.jsx';
 
 export const routes = [
     {
@@ -41,5 +42,11 @@ export const routes = [
         component: AdminPanel,
         path: '/admin',
         exact: false,
+    },
+    {
+        name: 'PostInfoDetailed',
+        component: PostInfoDetailed,
+        path: '/post/:post_uid',
+        exact: true,
     },
 ];

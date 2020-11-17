@@ -3,7 +3,7 @@ export const baseUrl = 'https://travel-mern-server.herokuapp.com/api';
 export const headerLinks = [
     {
         link: '/europe',
-        value: 'Дешевые билеты',
+        value: 'Лоукост по Миру',
     },
     {
         link: '/ukraine',
