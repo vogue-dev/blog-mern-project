@@ -35,7 +35,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer__bottom">
-                    <div className="footer__bottom--content">© 2020 Created by vogue-dev</div>
+                    <div className="footer__bottom--content">© 2020 CREATED BY VOGUE-DEV</div>
                 </div>
             </div>
         </footer>

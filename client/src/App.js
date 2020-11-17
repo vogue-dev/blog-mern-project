@@ -8,7 +8,7 @@ import { routes } from './utils/routes.js';
 
 const ContentWrapper = styled.div`
      {
-        height: calc(100%-70px);
+        min-height: calc(100vh - 70px);
         margin-top: 70px;
         flex: 1 0 auto;
     }
