@@ -1,0 +1,16 @@
+.admin-panel {
+	& .left {
+		flex: 2;
+	}
+
+	& .right {
+		flex: 10;
+	}
+}
+
+.right-c {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 10;
+}

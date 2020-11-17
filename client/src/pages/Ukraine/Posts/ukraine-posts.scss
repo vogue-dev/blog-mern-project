@@ -1,0 +1,17 @@
+main {
+	z-index: 1010;
+
+	& .content {
+		flex: 9;
+
+		& .cards {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		& ul {
+			background-color: rosybrown;
+			list-style: none;
+		}
+	}
+}
