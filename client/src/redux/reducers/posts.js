@@ -1,23 +1,23 @@
 const initialState = {
-    data: [],
+    postsUa: [],
+    postsEu: [],
     isLoaded: false,
-    currentPage: 1,
-    pagination: [1, 2, 3, 4, 5],
 };
 
 const posts = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_DATA':
+        case 'SET_EU_POSTS':
             return {
                 ...state,
-                data: action.payload,
+                postsEu: action.payload,
                 isLoaded: true,
             };
 
-        case 'SET_DATA_FETCHING':
+        case 'SET_UA_POSTS':
             return {
                 ...state,
-                isLoaded: action.payload,
+                postsUa: action.payload,
+                isLoaded: true,
             };
 
         // case 'SET_CURRENT_PAGE':

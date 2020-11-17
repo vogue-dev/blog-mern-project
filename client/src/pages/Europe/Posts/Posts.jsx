@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchingPostsEu } from '../../../redux/actions/posts.js';
 
 import Card from '../../../components/Card/Card.jsx';
 import Aside from '../../../components/Aside/Aside.jsx';
-import { baseUrl } from '../../../utils/constants.js';
 
 import './europe-posts.scss';
 
 const Posts = () => {
-    const [data, setData] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const dispatch = useDispatch();
+    const data = useSelector(({ posts }) => posts.postsEu);
+    const isLoaded = useSelector(({ posts }) => posts.isLoaded);
 
     useEffect(() => {
-        const fetchingData = async () => {
-            await axios.get(`${baseUrl}/posts`).then((result) => setData(result.data));
-            await setIsLoaded(true);
-        };
-
-        fetchingData();
-    }, []);
+        dispatch(fetchingPostsEu('posts'));
+    }, [dispatch]);
 
     return isLoaded ? (
         <main>
