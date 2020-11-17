@@ -13,7 +13,7 @@ const Card = ({ card }) => {
     return (
         <div className="card">
             <div className="card__wrapper" onClick={(_id) => onClickOpenDetails(_id)}>
-                <Link to="/post/:post_uid">
+                <Link to={`/post/${_id}`}>
                     <div className="card__body">
                         <div className="card__body--img">
                             <img src={image} alt="abc"></img>

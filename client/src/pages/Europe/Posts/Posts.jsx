@@ -5,8 +5,6 @@ import Card from '../../../components/Card/Card.jsx';
 import Aside from '../../../components/Aside/Aside.jsx';
 import { baseUrl } from '../../../utils/constants.js';
 
-// import { cards } from '../../db';
-
 import './europe-posts.scss';
 
 const Posts = () => {
@@ -32,11 +30,6 @@ const Posts = () => {
                                 <Card card={card} key={i} />
                             ))}
                         </div>
-                        {/* <ul>
-							{data.map((e) => (
-								<li key={e.id}>{e.title}</li>
-							))}
-						</ul> */}
                     </div>
                     <Aside />
                 </div>
