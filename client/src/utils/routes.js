@@ -6,40 +6,40 @@ import News from '../pages/News/News.jsx';
 import AdminPanel from '../pages/AdminPanel/AdminPanel.jsx';
 
 export const routes = [
-	{
-		name: 'Main',
-		component: Main,
-		path: '/',
-		exact: true,
-	},
-	{
-		name: 'Ukraine',
-		component: Ukraine,
-		path: '/ukraine',
-		exact: true,
-	},
-	{
-		name: 'Europe',
-		component: Europe,
-		path: '/europe',
-		exact: true,
-	},
-	{
-		name: 'Blog',
-		component: Blog,
-		path: '/blog',
-		exact: true,
-	},
-	{
-		name: 'News',
-		component: News,
-		path: '/news',
-		exact: true,
-	},
-	{
-		name: 'AdminPanel',
-		component: AdminPanel,
-		path: '/admin',
-		exact: true,
-	},
+    {
+        name: 'Main',
+        component: Main,
+        path: '/',
+        exact: true,
+    },
+    {
+        name: 'Ukraine',
+        component: Ukraine,
+        path: '/ukraine',
+        exact: true,
+    },
+    {
+        name: 'Europe',
+        component: Europe,
+        path: '/europe',
+        exact: true,
+    },
+    {
+        name: 'Blog',
+        component: Blog,
+        path: '/blog',
+        exact: true,
+    },
+    {
+        name: 'News',
+        component: News,
+        path: '/news',
+        exact: true,
+    },
+    {
+        name: 'AdminPanel',
+        component: AdminPanel,
+        path: '/admin',
+        exact: false,
+    },
 ];

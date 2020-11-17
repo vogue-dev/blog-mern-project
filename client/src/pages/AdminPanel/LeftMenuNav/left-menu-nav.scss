@@ -1,22 +1,3 @@
-.admin-panel {
-    height: 100%;
-
-    &--left {
-        flex: 2;
-    }
-
-    &--right {
-        flex: 10;
-    }
-}
-
-.right-c {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 10;
-}
-
 .left-manu-nav {
     height: 100%;
     background-color: peachpuff;

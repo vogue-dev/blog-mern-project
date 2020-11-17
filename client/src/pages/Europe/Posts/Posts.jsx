@@ -11,7 +11,7 @@ import './europe-posts.scss';
 
 const Posts = () => {
     const [data, setData] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         const fetchingData = async () => {
