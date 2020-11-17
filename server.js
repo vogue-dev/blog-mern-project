@@ -11,6 +11,8 @@ const __dirname = dirname(__filename);
 import postRoutes from './routes/posts.js';
 import ukraineRoutes from './routes/postsUA.js';
 
+// ---- ---- ---- ---- ---- ---- ----
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const DB_CONNECTION =
