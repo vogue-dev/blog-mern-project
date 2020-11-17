@@ -27,11 +27,6 @@ const Posts = () => {
                                 <Card card={card} key={i} />
                             ))}
                         </div>
-                        {/* <ul>
-							{data.map((e) => (
-								<li key={e.id}>{e.title}</li>
-							))}
-						</ul> */}
                     </div>
                     <Aside />
                 </div>
