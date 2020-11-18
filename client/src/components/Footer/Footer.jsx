@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTelegramPlane, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 import './footer.scss';
 
@@ -14,9 +14,9 @@ const Footer = () => {
                         <div className="footer__content--socials">
                             <ul>
                                 OUR SOCIALS:
-                                <FontAwesomeIcon icon={faTelegramPlane} />
-                                <FontAwesomeIcon icon={faInstagram} />
-                                <FontAwesomeIcon icon={faYoutube} />
+                                <FaTelegramPlane />
+                                <AiOutlineInstagram />
+                                <AiOutlineYoutube />
                             </ul>
                         </div>
                     </div>

@@ -1,8 +1,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
-import './login.scss';
-import { login } from '../../../redux/actions/state.js';
+import { login } from '../../redux/actions/state.js';
+import Modal from '../../components/Modal/Modal.jsx';
+
+const LoginPage = styled.div`
+     {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+`;
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -14,9 +24,9 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <buttom onClick={onLogin}>Войти в админку</buttom>
-        </div>
+        <LoginPage>
+            <Modal onLogin={onLogin} />
+        </LoginPage>
     );
 };
 

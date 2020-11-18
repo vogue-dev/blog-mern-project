@@ -5,6 +5,7 @@ import Blog from '../pages/Blog/Blog.jsx';
 import News from '../pages/News/News.jsx';
 import AdminPanel from '../pages/AdminPanel/AdminPanel.jsx';
 import PostInfoDetailed from '../pages/PostInfoDetailed/PostInfoDetailed.jsx';
+import Login from '../pages/Login/Login.jsx';
 
 export const routes = [
     {
@@ -47,6 +48,12 @@ export const routes = [
         name: 'PostInfoDetailed',
         component: PostInfoDetailed,
         path: '/post/:post_uid',
+        exact: true,
+    },
+    {
+        name: 'Login',
+        component: Login,
+        path: '/login',
         exact: true,
     },
 ];

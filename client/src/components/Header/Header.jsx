@@ -2,17 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { headerLinks } from '../../utils/constants.js';
 
+import { RiLoginBoxLine } from 'react-icons/ri';
+
 import './header.scss';
 
 const Header = () => {
     return (
         <header>
             <div className="container">
-                <div className="row">
-                    <div className="logo">
-                        <Link to="/">Logo</Link>
+                <div className="header__content">
+                    <div className="header__content--logo">
+                        <Link to="/">
+                            <img src="./assets/images/logo.png" alt="logo" />
+                        </Link>
                     </div>
-                    <div className="links">
+
+                    <div className="header__content--links">
                         <ul>
                             {headerLinks.map(({ link, value }, i) => (
                                 <Link to={link} key={i}>
@@ -21,8 +26,14 @@ const Header = () => {
                             ))}
                         </ul>
                     </div>
-                    <div className="login">
-                        <Link to="/admin">Админка</Link>
+
+                    <div className="header__content--login">
+                        <Link to="/admin">
+                            <div className="login">
+                                Admin
+                                <RiLoginBoxLine />
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

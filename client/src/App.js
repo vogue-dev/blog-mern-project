@@ -18,13 +18,13 @@ function App() {
     return (
         <>
             <Header />
-            <ContentWrapper>
-                <Switch>
+            <Switch>
+                <ContentWrapper>
                     {routes.map(({ path, exact, component, name }) => (
                         <Route path={path} exact={exact} component={component} key={name} />
                     ))}
-                </Switch>
-            </ContentWrapper>
+                </ContentWrapper>
+            </Switch>
             <Footer />
         </>
     );
