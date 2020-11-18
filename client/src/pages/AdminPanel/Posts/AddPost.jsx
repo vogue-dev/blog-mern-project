@@ -5,7 +5,7 @@ import { baseUrl } from '../../../utils/constants.js';
 
 const AddPost = () => {
     let [state, setState] = useState({});
-    let [selectType, setSelectType] = useState('posts');
+    let [selectType, setSelectType] = useState('europe');
     const select = useRef();
     const title = useRef();
     const titleStatus = useRef();
@@ -31,7 +31,7 @@ const AddPost = () => {
     return (
         <div>
             <select ref={select} value={selectType} onChange={onClickSetSelectType}>
-                <option value="posts">Europe Post</option>
+                <option value="europe">Europe Post</option>
                 <option value="ukraine">Ukraine Post</option>
             </select>
             <form className="fd-c" onSubmit={addNewPost} onChange={addValues}>

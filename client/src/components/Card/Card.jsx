@@ -6,11 +6,9 @@ import './card.scss';
 const Card = ({ card, param }) => {
     let { title, price, description, date, readingTime, image, titleStatus, _id } = card;
 
-    const onClickOpenDetails = () => {};
-
     return (
         <div className="card">
-            <div className="card__wrapper" onClick={(_id) => onClickOpenDetails(_id)}>
+            <div className="card__wrapper">
                 <Link to={`/${param}/post/${_id}`}>
                     <div className="card__body">
                         <div className="card__body--img">
