@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchingPostsUa } from '../../../redux/actions/posts.js';
+import { fetchingPostsUa } from '../../../redux/actions/state.js';
 
 import Card from '../../../components/Card/Card.jsx';
 import Aside from '../../../components/Aside/Aside.jsx';
@@ -10,8 +10,8 @@ import './ukraine-posts.scss';
 
 const Posts = () => {
     const dispatch = useDispatch();
-    const data = useSelector(({ posts }) => posts.postsUa);
-    const isLoaded = useSelector(({ posts }) => posts.isLoaded);
+    const data = useSelector(({ state }) => state.postsUa);
+    const isLoaded = useSelector(({ state }) => state.isLoaded);
 
     useEffect(() => {
         dispatch(fetchingPostsUa('ukraine'));

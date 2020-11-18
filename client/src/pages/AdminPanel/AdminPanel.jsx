@@ -3,6 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import AddPost from './Posts/AddPost.jsx';
 import DeletePost from './Posts/DeletePost.jsx';
+import Login from './Login/Login.jsx';
 
 import './admin-panel.scss';
 
@@ -19,6 +20,9 @@ const AdminPanel = () => {
                             <Link to="/admin/delete-post">
                                 <li>Удалить пост</li>
                             </Link>
+                            <Link to="/admin/login">
+                                <li>Login</li>
+                            </Link>
                         </ul>
                     </div>
                 </div>
@@ -28,6 +32,7 @@ const AdminPanel = () => {
                         <Switch>
                             <Route path="/admin/add-post" component={AddPost} />
                             <Route path="/admin/delete-post" component={DeletePost} />
+                            <Route path="/admin/login" component={Login} />
                         </Switch>
                     </div>
                 </div>

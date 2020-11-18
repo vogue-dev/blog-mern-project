@@ -2,6 +2,7 @@ const initialState = {
     postsUa: [],
     postsEu: [],
     isLoaded: false,
+    isLogin: false,
 };
 
 const posts = (state = initialState, action) => {
@@ -18,6 +19,12 @@ const posts = (state = initialState, action) => {
                 ...state,
                 postsUa: action.payload,
                 isLoaded: true,
+            };
+
+        case 'SET_LOGIN':
+            return {
+                ...state,
+                isLogin: action.payload,
             };
 
         // case 'SET_CURRENT_PAGE':

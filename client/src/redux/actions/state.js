@@ -11,6 +11,15 @@ export const fetchingPostsUa = (helper) => (dispatch) => {
     axios.get(`${baseUrl}/${helper}`).then((response) => dispatch(setPostsUa(response.data)));
 };
 
+export const login = (param) => async (dispatch) => {
+    dispatch(setLogin(param));
+};
+
+export const setLogin = (param) => ({
+    type: 'SET_LOGIN',
+    payload: param,
+});
+
 export const setPostsEu = (data) => ({
     type: 'SET_EU_POSTS',
     payload: data,
