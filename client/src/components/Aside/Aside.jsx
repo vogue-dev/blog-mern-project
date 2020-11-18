@@ -10,9 +10,10 @@ const Aside = () => {
     return (
         <div className="aside">
             <div className="filter">
-                <form className="">
-                    <InputField label="Откуда" />
-                    <InputField label="Куда" />
+                <div className="filter__text">Поиск</div>
+                <form className="filter__form">
+                    <InputField id="filled-basic" label="Откуда" variant="filled" />
+                    <InputField id="filled-basic" label="Куда" variant="filled" />
 
                     {/* <DatePickerField label="Отправка" />
 							<DatePickerField label="Прибытие" /> */}

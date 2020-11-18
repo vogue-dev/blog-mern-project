@@ -32,7 +32,7 @@ const Modal = ({ onLogin }) => {
     return (
         <div className={isActive ? 'modal active' : 'modal'}>
             <div className="modal__wrapper">
-                <div className="modal__title">Inter your login & password</div>
+                <div className="modal__title">Enter your login & password</div>
                 <div className="modal__body">
                     <form className={classes.root} noValidate autoComplete="off" onSubmit={onLogin}>
                         <div>
