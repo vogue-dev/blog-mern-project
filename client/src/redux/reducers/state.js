@@ -2,7 +2,7 @@ const initialState = {
     postsUa: [],
     postsEu: [],
     isLoaded: false,
-    isAdmin: true,
+    isAdmin: false,
 };
 
 const posts = (state = initialState, action) => {
