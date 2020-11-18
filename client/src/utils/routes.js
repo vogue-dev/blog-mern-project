@@ -39,12 +39,6 @@ export const routes = [
         exact: true,
     },
     {
-        name: 'AdminPanel',
-        component: AdminPanel,
-        path: '/admin',
-        exact: false,
-    },
-    {
         name: 'PostInfoDetailed',
         component: PostInfoDetailed,
         path: '/post/:post_uid',

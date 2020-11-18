@@ -15,6 +15,6 @@ export const headerLinks = [
     },
     {
         link: '/blog',
-        value: 'Годнота/Блог',
+        value: 'Блог',
     },
 ];

@@ -2,7 +2,7 @@ const initialState = {
     postsUa: [],
     postsEu: [],
     isLoaded: false,
-    isLogin: false,
+    isAdmin: true,
 };
 
 const posts = (state = initialState, action) => {
@@ -24,7 +24,7 @@ const posts = (state = initialState, action) => {
         case 'SET_LOGIN':
             return {
                 ...state,
-                isLogin: action.payload,
+                isAdmin: action.payload,
             };
 
         // case 'SET_CURRENT_PAGE':

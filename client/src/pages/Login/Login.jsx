@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import { login } from '../../redux/actions/state.js';
 import Modal from '../../components/Modal/Modal.jsx';
@@ -18,12 +19,16 @@ const LoginPage = styled.div`
 `;
 
 const Login = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const onLogin = () => {
         let isBoss = window.confirm('Ты здесь главный?');
         dispatch(login(isBoss));
-        isBoss ? alert('login success!') : alert('вы не админ');
+        if (isBoss) {
+            alert('login success!');
+            history.push('/admin');
+        } else alert('вы не админ');
     };
 
     return (
