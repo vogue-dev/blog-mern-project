@@ -41,7 +41,7 @@ export const routes = [
     {
         name: 'PostInfoDetailed',
         component: PostInfoDetailed,
-        path: '/post/:post_uid',
+        path: '/ukraine/post/:post_uid',
         exact: true,
     },
     {

@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom';
 
 import './card.scss';
 
-const Card = ({ card }) => {
+const Card = ({ card, param }) => {
     let { title, price, description, date, readingTime, image, titleStatus, _id } = card;
 
-    const onClickOpenDetails = () => {
-        console.log('unique_id', _id);
-    };
+    const onClickOpenDetails = () => {};
 
     return (
         <div className="card">
             <div className="card__wrapper" onClick={(_id) => onClickOpenDetails(_id)}>
-                <Link to={`/post/${_id}`}>
+                <Link to={`/${param}/post/${_id}`}>
                     <div className="card__body">
                         <div className="card__body--img">
                             <img src={image} alt="abc"></img>

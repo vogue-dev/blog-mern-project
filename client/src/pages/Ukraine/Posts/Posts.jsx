@@ -9,12 +9,13 @@ import Aside from '../../../components/Aside/Aside.jsx';
 import './ukraine-posts.scss';
 
 const Posts = () => {
+    const ukraine = 'ukraine';
     const dispatch = useDispatch();
     const data = useSelector(({ state }) => state.postsUa);
     const isLoaded = useSelector(({ state }) => state.isLoaded);
 
     useEffect(() => {
-        dispatch(fetchingPostsUa('ukraine'));
+        dispatch(fetchingPostsUa(ukraine));
     }, [dispatch]);
 
     return isLoaded ? (
@@ -24,7 +25,7 @@ const Posts = () => {
                     <div className="content">
                         <div className="cards">
                             {data.map((card, i) => (
-                                <Card card={card} key={i} />
+                                <Card card={card} key={i} param={ukraine} />
                             ))}
                         </div>
                     </div>
