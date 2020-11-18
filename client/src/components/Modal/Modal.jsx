@@ -25,11 +25,6 @@ const Modal = ({ onLogin }) => {
     const classes = useStyles();
     let [isActive, setIsActive] = useState(false);
 
-    // const onLogin = (e) => {
-    //     e.preventDefault();
-    //     console.log('zakrili');
-    // };
-
     useEffect(() => {
         setIsActive(true);
     }, []);
