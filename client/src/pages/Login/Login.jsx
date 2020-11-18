@@ -7,10 +7,13 @@ import Modal from '../../components/Modal/Modal.jsx';
 
 const LoginPage = styled.div`
      {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 140px);
+
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
     }
 `;
 

@@ -3,6 +3,8 @@ footer {
     background-color: #1a1a1a;
     color: white;
 
+    flex: 1 0 auto;
+
     & ul {
         list-style: none;
         font-weight: bold;
