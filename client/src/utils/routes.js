@@ -44,10 +44,4 @@ export const routes = [
         path: '/ukraine/post/:post_uid',
         exact: true,
     },
-    {
-        name: 'Login',
-        component: Login,
-        path: '/login',
-        exact: true,
-    },
 ];

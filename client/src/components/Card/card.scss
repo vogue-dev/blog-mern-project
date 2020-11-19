@@ -46,7 +46,7 @@
         }
 
         & .card__footer {
-            padding: 20px;
+            padding: 15px 20px;
 
             display: flex;
             flex: 1 0 auto;
@@ -72,11 +72,13 @@
             &--date {
                 color: gray;
                 font-size: 12px;
+                line-height: 1;
             }
 
             &--reading {
                 color: gray;
                 font-size: 12px;
+                line-height: 1;
             }
         }
 

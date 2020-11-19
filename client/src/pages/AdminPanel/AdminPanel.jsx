@@ -22,8 +22,8 @@ const AdminPanel = () => {
                             <Link to="/login">
                                 <li>Login</li>
                             </Link>
-                            <Link to="/logout">
-                                <li>Logout</li>
+                            <Link to="/">
+                                <li>Logout/Main</li>
                             </Link>
                         </ul>
                     </div>

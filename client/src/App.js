@@ -1,36 +1,27 @@
 import { Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-
-import Header from './components/Header/Header.jsx';
-import Footer from './components/Footer/Footer.jsx';
 
 import { routes } from './utils/routes.js';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+import ApplicationWrapper from './components/ApplicationWrapper/ApplicationWrapper.jsx';
 import AdminPanel from './pages/AdminPanel/AdminPanel.jsx';
-
-const ContentWrapper = styled.div`
-     {
-        min-height: calc(100vh - 70px);
-        height: 100%;
-        margin-top: 70px;
-        flex: 1 0 auto;
-    }
-`;
+import Login from './pages/Login/Login.jsx';
 
 function App() {
     return (
         <>
-            <Header />
             <Switch>
-                <ContentWrapper>
-                    {routes.map(({ path, exact, component, name }) => (
-                        <Route path={path} exact={exact} component={component} key={name} />
-                    ))}
+                {routes.map(({ path, exact, component, name }) => (
+                    <ApplicationWrapper
+                        path={path}
+                        exact={exact}
+                        component={component}
+                        key={name}
+                    />
+                ))}
 
-                    <ProtectedRoute component={AdminPanel} exact={false} path="/admin" />
-                </ContentWrapper>
+                <ProtectedRoute path="/admin" component={AdminPanel} />
+                <Route path="/login" exact component={Login} />
             </Switch>
-            <Footer />
         </>
     );
 }
