@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
-const AddPost = () => {
+const DeletePost = () => {
     const userIdValue = useRef();
 
     let [state, setState] = useState({
@@ -35,4 +35,4 @@ const AddPost = () => {
     );
 };
 
-export default AddPost;
+export default DeletePost;

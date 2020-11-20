@@ -71,7 +71,7 @@ const LoginFormWrapper = styled.div`
      {
         max-width: 450px;
         background-color: white;
-        opacity: 0.2;
+        opacity: 0;
         transform: scale(0.9);
         transition-duration: 0.5s;
 
