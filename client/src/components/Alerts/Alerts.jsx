@@ -19,28 +19,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleAlerts() {
     const classes = useStyles();
-    // const [badges, setBadges] = useState([
-    //     {
-    //         id: 0,
-    //         variant: 'filled',
-    //         severity: 'success',
-    //         onClose: 'activate',
-    //         text: 'This is a success alert — check it out!',
-    //     },
-    //     {
-    //         id: 1,
-    //         variant: 'filled',
-    //         severity: 'success',
-    //         onClose: 'activate',
-    //         text: 'This is a success alert — check it out!',
-    //     },
-    // ]);
+    const [badges, setBadges] = useState([
+        {
+            id: 0,
+            variant: 'filled',
+            severity: 'success',
+            onClose: 'activate',
+            text: 'This is a success alert — check it out!',
+        },
+        {
+            id: 1,
+            variant: 'filled',
+            severity: 'success',
+            onClose: 'activate',
+            text: 'This is a success alert — check it out!',
+        },
+    ]);
 
-    // const activate = (current_id) => {
-    //     badges.map((number) => {
-    //         number.id === current_id ? setBadges(badges.splice(current_id, 1)) : null;
-    //     });
-    // };
+    const createToast = (current_id) => {};
+
+    const deleteToast = () => {};
 
     return (
         <div className={classes.root}>
@@ -67,7 +65,7 @@ export default function SimpleAlerts() {
                 </Alert>
             ))} */}
 
-            {/* <Alert variant="filled" severity="success" onClose={activate} className={classes.badge}>
+            <Alert variant="filled" severity="success" onClose={activate} className={classes.badge}>
                 ЗАПУСК
             </Alert>
 
@@ -76,7 +74,7 @@ export default function SimpleAlerts() {
             </Alert>
             <Alert variant="filled" severity="success" onClose={() => {}} className={classes.badge}>
                 This is a success alert — check it out!
-            </Alert> */}
+            </Alert>
         </div>
     );
 }
