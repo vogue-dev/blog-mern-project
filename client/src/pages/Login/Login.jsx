@@ -16,6 +16,8 @@ const LoginPage = styled.div`
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+
+        overflow-x: hidden;
     }
 `;
 
