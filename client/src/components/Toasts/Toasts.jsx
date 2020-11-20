@@ -25,22 +25,33 @@ export default function SimpleAlerts() {
             variant: 'filled',
             severity: 'success',
             onClose: 'activate',
-            text: 'This is a success alert — check it out!',
+            text: '1 This is a success alert — check it out!',
         },
         {
             id: 1,
             variant: 'filled',
             severity: 'success',
             onClose: 'activate',
-            text: 'This is a success alert — check it out!',
+            text: '2 This is a success alert — check it out!',
+        },
+        {
+            id: 2,
+            variant: 'filled',
+            severity: 'success',
+            onClose: 'activate',
+            text: '3 This is a success alert — check it out!',
         },
     ]);
 
-    const createToast = (current_id) => {
-        console.log(current_id);
+    const createToast = (current_index) => {
+        console.log(current_index);
+        deleteToast(current_index);
     };
 
-    const deleteToast = () => {};
+    const deleteToast = (current_index) => {
+        var removed = toasts.splice(current_index, 1);
+        setToasts(removed);
+    };
 
     return (
         <div className={classes.root}>
@@ -54,12 +65,12 @@ export default function SimpleAlerts() {
                 This is an info alert — check it out!
             </Alert> */}
             {console.log(toasts)}
-            {toasts.map(({ id, variant, severity, text }) => (
+            {toasts.map(({ id, variant, severity, text }, i) => (
                 <Alert
                     variant={variant}
                     severity={severity}
-                    onClose={(id) => {
-                        createToast(id);
+                    onClose={(i) => {
+                        deleteToast(i);
                     }}
                     className={classes.badge}
                     key={id}>

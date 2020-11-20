@@ -5,7 +5,6 @@
 
 html {
     height: 100%;
-    background-color: red;
 }
 
 body {
@@ -17,14 +16,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: -apple-system, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
         'Droid Sans', 'Helvetica Neue', sans-serif;
-    background-color: orange;
 }
 
 #root {
-    height: 100%;
+    position: relative;
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
-    background-color: yellow;
 }
 
 code {

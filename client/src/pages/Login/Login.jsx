@@ -6,7 +6,6 @@ import LoginForm from '../../components/LoginForm/LoginForm.jsx';
 
 const LoginPage = styled.div`
      {
-        background-color: green;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -17,14 +16,11 @@ const LoginPage = styled.div`
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-
-        overflow: hidden;
     }
 `;
 
 const DottedWrapper = styled.div`
      {
-        background-color: blue;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -73,9 +69,7 @@ const DottedWrapper = styled.div`
 
 const LoginFormWrapper = styled.div`
      {
-        background-color: purple;
         max-width: 450px;
-        margin: 0 auto;
         background-color: white;
         opacity: 0.2;
         transform: scale(0.9);
