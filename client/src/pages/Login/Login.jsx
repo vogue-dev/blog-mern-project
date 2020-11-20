@@ -6,8 +6,7 @@ import LoginForm from '../../components/LoginForm/LoginForm.jsx';
 
 const LoginPage = styled.div`
      {
-        position: relative;
-        max-width: 100%;
+        position: absolute;
         width: 100%;
         min-height: 100%;
 
@@ -22,7 +21,7 @@ const LoginPage = styled.div`
 
 const DottedWrapper = styled.div`
      {
-        position: relative;
+        position: absolute;
         width: 100%;
         height: 100%;
 
