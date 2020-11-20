@@ -3,25 +3,28 @@
     padding: 0;
 }
 
-html,
-body {
+html {
     height: 100%;
-    width: 100%;
+    background-color: red;
 }
 
 body {
+    width: 100%;
+    min-height: 100vh;
     // font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu',
     // 	'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: -apple-system, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
         'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-color: orange;
 }
 
 #root {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: yellow;
 }
 
 code {
