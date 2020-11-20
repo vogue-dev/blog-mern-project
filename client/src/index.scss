@@ -8,9 +8,11 @@
 }
 
 /* Убираем внутренние отступы */
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
 ol[class] {
     padding: 0;
+    list-style: none;
 }
 
 /* Убираем внешние отступы */
@@ -30,12 +32,6 @@ dl,
 dd {
     margin: 0;
     padding: 0;
-}
-
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-    list-style: none;
 }
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
@@ -72,15 +68,15 @@ select {
     }
 }
 
-// html {
-//     height: 100%;
-//     -webkit-box-sizing: border-box;
-//     box-sizing: border-box;
-// }
+html {
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
@@ -103,11 +99,6 @@ body {
 // code {
 //     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 // }
-
-img {
-    display: block;
-    max-width: 100%;
-}
 
 .container {
     width: 100%;
