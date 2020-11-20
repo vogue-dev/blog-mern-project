@@ -8,7 +8,6 @@ const LoginPage = styled.div`
      {
         position: absolute;
         width: 100%;
-        min-height: 100%;
         height: 100%;
 
         // background-image: url('https://images.wallpaperscraft.ru/image/devushka_puteshestvie_kemping_166108_1920x1080.jpg');
@@ -24,7 +23,6 @@ const DottedWrapper = styled.div`
      {
         position: absolute;
         width: 100%;
-        min-height: 100%;
         height: 100%;
 
         overflow-y: scroll;
