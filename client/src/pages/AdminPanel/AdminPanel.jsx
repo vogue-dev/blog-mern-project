@@ -31,7 +31,12 @@ const useStyles = makeStyles((theme) => ({
     adminPanel: {
         display: 'flex',
         height: '100%',
+        '& a': {
+            color: 'black',
+            textDecoration: 'none',
+        },
     },
+
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
@@ -162,7 +167,7 @@ const AdminPanel = () => {
                                 <ListItemIcon>
                                     <InboxIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Inbox" />
+                                <ListItemText primary="Мой профиль" />
                             </ListItem>
                             <ListItem
                                 button

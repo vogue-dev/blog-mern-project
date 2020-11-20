@@ -10,9 +10,10 @@ import './application-wrapper.scss';
 
 const ContentWrapper = styled.div`
      {
-        min-height: calc(100vh - 70px);
-        height: 100%;
-        margin-top: 70px;
+        /* min-height: calc(100vh - 70px); */
+        /* height: 100%; */
+
+        margin-top: 64px;
         flex: 1 0 auto;
     }
 `;
