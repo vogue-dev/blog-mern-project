@@ -27,7 +27,7 @@ const DottedWrapper = styled.div`
 
         overflow-y: scroll;
 
-        padding: 2em 1.5em 2em 1.5em;
+        // padding: 2em 1.5em 2em 1.5em;
         background-image: -webkit-repeating-radial-gradient(
             center center,
             rgba(0, 0, 0, 0.2),
