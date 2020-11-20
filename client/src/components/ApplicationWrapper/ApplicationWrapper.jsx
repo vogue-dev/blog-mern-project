@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
+import Alerts from '../Alerts/Alerts.jsx';
 
 import './application-wrapper.scss';
 
@@ -19,6 +20,7 @@ const ContentWrapper = styled.div`
 const ApplicationWrapper = ({ path, exact, component, name }) => {
     return (
         <>
+            <Alerts />
             <Header />
             <ContentWrapper>
                 <Route path={path} exact={exact} component={component} key={name} />

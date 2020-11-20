@@ -11,7 +11,7 @@ export const fetchingPostsUa = (helper) => (dispatch) => {
     axios.get(`${baseUrl}/${helper}`).then((response) => dispatch(setPostsUa(response.data)));
 };
 
-export const login = (param) => async (dispatch) => {
+export const setAdmin = (param) => async (dispatch) => {
     dispatch(setLogin(param));
 };
 

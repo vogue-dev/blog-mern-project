@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
 
-import { login } from '../../redux/actions/state.js';
+import styled from 'styled-components';
+
 import LoginForm from '../../components/LoginForm/LoginForm.jsx';
+
+const LoginPage = styled.div`
+     {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        min-height: 100%;
+
+        // background-image: url('https://images.wallpaperscraft.ru/image/devushka_puteshestvie_kemping_166108_1920x1080.jpg');
+        background-image: url('https://images.hdqwalls.com/download/travel-hd-1920x1080.jpg');
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+`;
 
 const DottedWrapper = styled.div`
      {
+        position: relative;
         width: 100%;
         height: 100%;
 
-        padding: 2.25em 1.6875em;
+        overflow-y: scroll;
+
+        padding: 2em 1.5em 2em 1.5em;
         background-image: -webkit-repeating-radial-gradient(
             center center,
             rgba(0, 0, 0, 0.2),
@@ -47,27 +64,14 @@ const DottedWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-`;
-
-const LoginPage = styled.div`
-     {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-
-        // background-image: url('https://images.wallpaperscraft.ru/image/devushka_puteshestvie_kemping_166108_1920x1080.jpg');
-        background-image: url('https://images.hdqwalls.com/download/travel-hd-1920x1080.jpg');
-
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
+        flex-wrap: wrap;
     }
 `;
 
 const LoginFormWrapper = styled.div`
      {
-        padding: 40px 20px;
+        max-width: 450px;
+        margin: 0 auto;
         background-color: white;
         opacity: 0.2;
         transform: scale(0.9);
@@ -78,22 +82,19 @@ const LoginFormWrapper = styled.div`
             transform: scale(1);
         }
     }
+
+    @media (min-width: 601px) {
+        padding: 40px 20px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 20px 10px;
+        max-width: 350px;
+    }
 `;
 
 const Login = () => {
-    const history = useHistory();
-    const dispatch = useDispatch();
-
     let [isActive, setIsActive] = useState(false);
-
-    const onLogin = () => {
-        let isBoss = window.confirm('Ты здесь главный?');
-        dispatch(login(isBoss));
-        if (isBoss) {
-            alert('login success!');
-            history.push('/admin');
-        } else alert('вы не админ');
-    };
 
     useEffect(() => {
         setIsActive(true);
@@ -103,7 +104,7 @@ const Login = () => {
         <LoginPage>
             <DottedWrapper>
                 <LoginFormWrapper className={isActive ? 'active' : ''}>
-                    <LoginForm onLogin={onLogin} />
+                    <LoginForm />
                 </LoginFormWrapper>
             </DottedWrapper>
         </LoginPage>
