@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleAlerts() {
     const classes = useStyles();
-    const [badges, setBadges] = useState([
+    const [toasts, setToasts] = useState([
         {
             id: 0,
             variant: 'filled',
@@ -36,7 +36,9 @@ export default function SimpleAlerts() {
         },
     ]);
 
-    const createToast = (current_id) => {};
+    const createToast = (current_id) => {
+        console.log(current_id);
+    };
 
     const deleteToast = () => {};
 
@@ -51,21 +53,27 @@ export default function SimpleAlerts() {
             <Alert variant="filled" severity="info">
                 This is an info alert — check it out!
             </Alert> */}
-            {/* {console.log(badges)}
-            {badges.map(({ id, variant, severity, text }) => (
+            {console.log(toasts)}
+            {toasts.map(({ id, variant, severity, text }) => (
                 <Alert
                     variant={variant}
                     severity={severity}
                     onClose={(id) => {
-                        activate(id);
+                        createToast(id);
                     }}
                     className={classes.badge}
                     key={id}>
                     {text}
                 </Alert>
-            ))} */}
+            ))}
 
-            <Alert variant="filled" severity="success" onClose={activate} className={classes.badge}>
+            {/* <Alert
+                variant="filled"
+                severity="success"
+                onClose={() => {
+                    createToast();
+                }}
+                className={classes.badge}>
                 ЗАПУСК
             </Alert>
 
@@ -74,7 +82,7 @@ export default function SimpleAlerts() {
             </Alert>
             <Alert variant="filled" severity="success" onClose={() => {}} className={classes.badge}>
                 This is a success alert — check it out!
-            </Alert>
+            </Alert> */}
         </div>
     );
 }
