@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const BasicTextFields = ({ label }) => {
+const BasicTextFields = ({ label, id }) => {
     const classes = useStyles();
 
     return (
         <>
-            <TextField className={classes.input} label={label} id="filled-basic" variant="filled" />
+            <TextField className={classes.input} label={label} id={id} variant="filled" />
         </>
     );
 };

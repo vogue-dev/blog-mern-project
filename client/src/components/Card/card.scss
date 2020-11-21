@@ -26,6 +26,13 @@
                 }
             }
 
+            & .card__body--rating {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: #ffffff80;
+                height: 18px;
+            }
             & .card__body--details {
                 position: absolute;
                 width: 100%;

@@ -3,31 +3,44 @@ import { Switch, Route, Link } from 'react-router-dom';
 import AddPost from './Posts/AddPost';
 import DeletePost from './Posts/DeletePost';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
-import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 
+import {
+    makeStyles,
+    useTheme,
+    Drawer,
+    CssBaseline,
+    AppBar,
+    Toolbar,
+    List,
+    Typography,
+    Divider,
+    IconButton,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Collapse,
+} from '@material-ui/core';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
+    palette: {
+        primary: {
+            main: 'purple[500]',
+        },
+        secondary: {
+            main: 'green[500]',
+        },
+    },
+
     adminPanel: {
         display: 'flex',
         height: '100%',
@@ -169,7 +182,7 @@ const AdminPanel = () => {
                                 </ListItemIcon>
                                 <ListItemText primary="Мой профиль" />
                             </ListItem>
-                            <ListItem
+                            {/* <ListItem
                                 button
                                 selected={selectedIndex === 1}
                                 onClick={(event) => handleListItemClick(event, 1)}>
@@ -177,7 +190,7 @@ const AdminPanel = () => {
                                     <DraftsIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Drafts" />
-                            </ListItem>
+                            </ListItem> */}
                             <ListItem
                                 button
                                 selected={selectedIndex === 2 || selectedIndex === 3}
@@ -224,7 +237,7 @@ const AdminPanel = () => {
                                     button
                                     selected={selectedIndex === 4}
                                     onClick={(event) => handleListItemClick(event, 4)}>
-                                    <ListItemText primary="Login" />
+                                    <ListItemText primary="to Login Page" />
                                 </ListItem>
                             </Link>
                             <Link to="/">
@@ -232,7 +245,7 @@ const AdminPanel = () => {
                                     button
                                     selected={selectedIndex === 5}
                                     onClick={(event) => handleListItemClick(event, 5)}>
-                                    <ListItemText primary="Home" />
+                                    <ListItemText primary="to Home" />
                                 </ListItem>
                             </Link>
                         </List>
@@ -247,7 +260,7 @@ const AdminPanel = () => {
                         <Route path="/admin/add-post" component={AddPost} />
                         <Route path="/admin/delete-post" component={DeletePost} />
                     </Switch>
-                    <Typography paragraph>
+                    {/* <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
                         enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -260,7 +273,7 @@ const AdminPanel = () => {
                         vivamus at augue. At augue eget arcu dictum varius duis at consectetur
                         lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
                         faucibus et molestie ac.
-                    </Typography>
+                    </Typography> */}
                 </main>
             </div>
         </>

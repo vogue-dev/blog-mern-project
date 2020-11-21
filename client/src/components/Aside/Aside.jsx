@@ -12,8 +12,8 @@ const Aside = () => {
             <div className="filter">
                 <div className="filter__text">Поиск</div>
                 <form className="filter__form">
-                    <InputField id="filled-basic" label="Откуда" variant="filled" />
-                    <InputField id="filled-basic" label="Куда" variant="filled" />
+                    <InputField id="from" name="from" label="Откуда" variant="filled" />
+                    <InputField id="to" name="" label="Куда" variant="filled" />
 
                     {/* <DatePickerField label="Отправка" />
 							<DatePickerField label="Прибытие" /> */}

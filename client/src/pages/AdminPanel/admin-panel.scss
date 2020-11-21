@@ -1,44 +1,44 @@
-.admin-panel {
-    height: 100%;
+// .admin-panel {
+//     height: 100%;
 
-    &--left {
-        flex: 2;
-    }
+//     &--left {
+//         flex: 2;
+//     }
 
-    &--right {
-        flex: 10;
-    }
-}
+//     &--right {
+//         flex: 10;
+//     }
+// }
 
-.right-c {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 10;
-}
+// .right-c {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex: 10;
+// }
 
-.left-manu-nav {
-    min-height: 100%;
-    background-color: peachpuff;
-    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1);
+// .left-manu-nav {
+//     min-height: 100%;
+//     background-color: peachpuff;
+//     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1);
 
-    display: flex;
-    justify-content: center;
+//     display: flex;
+//     justify-content: center;
 
-    & ul {
-        width: 100%;
-        margin-top: 10px;
-        list-style: none;
+//     & ul {
+//         width: 100%;
+//         margin-top: 10px;
+//         list-style: none;
 
-        & li {
-            padding: 15px 20px;
-            margin: 8px 0;
-            background-color: lightgray;
+//         & li {
+//             padding: 15px 20px;
+//             margin: 8px 0;
+//             background-color: lightgray;
 
-            &:hover {
-                cursor: pointer;
-                background-color: gray;
-            }
-        }
-    }
-}
+//             &:hover {
+//                 cursor: pointer;
+//                 background-color: gray;
+//             }
+//         }
+//     }
+// }

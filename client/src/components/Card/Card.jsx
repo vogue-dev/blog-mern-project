@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rating from '@material-ui/lab/Rating';
 
 import './card.scss';
 
@@ -14,7 +15,9 @@ const Card = ({ card, param }) => {
                         <div className="card__body--img">
                             <img src={image} alt="abc"></img>
                         </div>
-                        <div className="card__body--rating"></div>
+                        <div className="card__body--rating">
+                            <Rating name="size-small" defaultValue={4} size="small" />
+                        </div>
                         <div className="card__body--details">
                             <div className="date">Самолет + Автобус</div>
                             <div className="reading">unique id: {_id}</div>
