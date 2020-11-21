@@ -155,11 +155,11 @@ const AddPost = () => {
                                 Title and Price Status
                             </InputLabel>
                             <Select
-                                labelId="titleStatus"
+                                name="titleStatus"
                                 id="titleStatus"
+                                label="Title and Price Status"
                                 value={values.titleStatus}
-                                onChange={handleChange}
-                                label="Title and Price Status">
+                                onChange={handleChange}>
                                 <MenuItem value={'default'}>Default</MenuItem>
                                 <MenuItem value={'success'}>Green</MenuItem>
                                 <MenuItem value={'warning'}>Yellow</MenuItem>
