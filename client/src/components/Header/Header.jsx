@@ -121,6 +121,10 @@ const useStyles = makeStyles((theme) => ({
     menuButton: {
         marginRight: theme.spacing(2),
     },
+
+    logo: {
+        maxWidth: '125px',
+    },
 }));
 
 export default function HideAppBar(props) {
@@ -155,6 +159,9 @@ export default function HideAppBar(props) {
                             <MenuIcon />
                         </IconButton>
 
+                        <div className={classes.logo}>
+                            <img src="/assets/images/logo.png" alt="logo"></img>
+                        </div>
                         <Typography className={classes.links} variant="h6" noWrap>
                             {headerLinks.map(({ link, text }, i) => (
                                 <Link to={link} key={i}>

@@ -1,23 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Checkbox from '@material-ui/core/Checkbox';
+// import Link from '@material-ui/core/Link';
+// import Grid from '@material-ui/core/Grid';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
@@ -67,80 +68,50 @@ const useStyles = makeStyles((theme) => ({
 
 const AddPost = () => {
     const classes = useStyles();
-    let [state, setState] = useState({});
-    let [selectType, setSelectType] = useState('europe');
-    const select = useRef();
-    const title = useRef();
-    const titleStatus = useRef();
-    const price = useRef();
-    const description = useRef();
-    const date = useRef();
-    const readingTime = useRef();
-    const image = useRef();
-    const [age, setAge] = React.useState('');
-
-    const handleSelect = (event) => {
-        setAge(event.target.value);
-    };
 
     const { handleSubmit, handleChange, values, touched, errors, handleBlur } = useFormik({
         initialValues: {
-            login: '',
-            password: '',
+            section: 'europe',
+            title: '',
+            titleStatus: 'default',
+            price: null,
+            description: '',
+            // publicationDate: '',
+            readingTime: null,
+            image: '',
         },
         validationSchema: Yup.object({
-            login: Yup.string()
-                .min(5, 'Login must be longer than 5 characters')
-                .required('Enter Login'),
-            password: Yup.string()
-                .min(5, 'Password must be longer than 5 characters')
-                .required('Enter Password'),
+            title: Yup.string()
+                .min(10, 'Title must be longer than 10 characters')
+                .required('Enter Title'),
+            price: Yup.number()
+                .min(1, 'Price must be min 1 euro')
+                .max(3000, 'Price must be max 3000 euro')
+                .required('Enter Price'),
+            description: Yup.string()
+                .min(10, 'Title must be longer than 10 characters')
+                .required('Enter Description'),
+            readingTime: Yup.number()
+                .min(1, 'Reading Time must be minimum 1 minute')
+                .max(10, 'Reading Time must be maximum 10 minutes')
+                .required('Enter Reading Time'),
+            image: Yup.string()
+                .matches(
+                    /((http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png))/,
+                    'Please enter http or https link to .png or .jpg file'
+                )
+                .required('Please enter http or https link to .png or .jpg file'),
         }),
-        onSubmit: ({ login, password }) => {
-            alert('Login success!');
+        onSubmit: (values) => {
+            alert('Login success!', values);
+            axios.post(`${baseUrl}/${values.section}`, values);
         },
     });
 
-    const addValues = ({ target }) => {
-        setState({ ...state, [target.name]: target.value });
-    };
-
-    const addNewPost = (e) => {
-        e.preventDefault();
-        axios.post(`${baseUrl}/${selectType}`, state);
-    };
-
-    const onClickSetSelectType = ({ target }) => {
-        setSelectType(target.value);
-    };
-
     return (
         <>
-            <div>
-                <select ref={select} value={selectType} onChange={onClickSetSelectType}>
-                    <option value="europe">Europe Post</option>
-                    <option value="ukraine">Ukraine Post</option>
-                </select>
-                <form className="fd-c" onSubmit={addNewPost} onChange={addValues}>
-                    <input ref={title} name="title" placeholder="title"></input>
-                    <input ref={titleStatus} name="titleStatus" placeholder="titleStatus"></input>
-                    <input ref={price} name="price" placeholder="price"></input>
-                    <input ref={description} name="description" placeholder="description"></input>
-                    <input ref={date} name="date" placeholder="date"></input>
-                    <input
-                        ref={readingTime}
-                        type="number"
-                        name="readingTime"
-                        placeholder="readingTime"></input>
-                    <input
-                        ref={image}
-                        name="image"
-                        placeholder="ссылка на картинку 16:9 (jpg/png)"></input>
-
-                    <button>Подтвердить</button>
-                </form>
-            </div>
             <Container component="main" maxWidth="xs">
+                {console.log('values', values)}
                 <CssBaseline />
                 <div className={classes.paper}>
                     {/* <Avatar className={classes.avatar}>
@@ -156,110 +127,117 @@ const AddPost = () => {
                                 В какой раздел публикуем ?
                             </InputLabel>
                             <Select
-                                labelId="demo-simple-select-outlined-label"
-                                id="demo-simple-select-outlined"
-                                value={age}
-                                onChange={handleSelect}
-                                label="Age">
+                                name="section"
+                                id="section"
+                                label="В какой раздел публикуем ?"
+                                value={values.section}
+                                error={touched.login && errors.login ? true : false}
+                                onChange={handleChange}>
                                 <MenuItem value={'europe'}>Europe</MenuItem>
                                 <MenuItem value={'ukraine'}>Ukraine</MenuItem>
                             </Select>
                         </FormControl>
                         <TextField
-                            error={touched.login && errors.login ? true : false}
-                            defaultValue={values.login}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            helperText={touched.login && errors.login ? errors.login : ''}
-                            variant="outlined"
-                            margin="normal"
                             id="title"
-                            label="Title"
                             name="title"
-                            fullWidth
-                        />
-                        <TextField
-                            error={touched.login && errors.login ? true : false}
-                            defaultValue={values.login}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            helperText={touched.login && errors.login ? errors.login : ''}
+                            label="Title"
                             variant="outlined"
                             margin="normal"
-                            id="title-status"
-                            label="Title Status: ('success', 'danger', etc)"
-                            name="title-status"
-                            fullWidth
-                        />
-                        <TextField
-                            error={touched.login && errors.login ? true : false}
-                            defaultValue={values.login}
+                            defaultValue={values.title}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            helperText={touched.login && errors.login ? errors.login : ''}
-                            variant="outlined"
-                            margin="normal"
-                            type="number"
+                            error={touched.title && errors.title ? true : false}
+                            helperText={touched.title && errors.title ? errors.title : ''}
+                            fullWidth
+                        />
+                        <FormControl variant="outlined" className={classes.formControl}>
+                            <InputLabel id="demo-simple-select-outlined-label">
+                                Title and Price Status
+                            </InputLabel>
+                            <Select
+                                labelId="titleStatus"
+                                id="titleStatus"
+                                value={values.titleStatus}
+                                onChange={handleChange}
+                                label="Title and Price Status">
+                                <MenuItem value={'default'}>Default</MenuItem>
+                                <MenuItem value={'success'}>Green</MenuItem>
+                                <MenuItem value={'warning'}>Yellow</MenuItem>
+                                <MenuItem value={'danger'}>Red</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <TextField
                             id="price"
-                            label="Price"
                             name="price"
+                            label="Price"
+                            type="number"
+                            variant="outlined"
+                            margin="normal"
+                            defaultValue={values.price}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={touched.price && errors.price ? true : false}
+                            helperText={touched.price && errors.price ? errors.price : ''}
                             fullWidth
                         />
                         <TextField
-                            error={touched.password && errors.password ? true : false}
-                            defaultValue={values.password}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            helperText={touched.password && errors.password ? errors.password : ''}
+                            id="description"
+                            name="description"
+                            label="Description"
                             variant="outlined"
                             margin="normal"
-                            name="password"
+                            defaultValue={values.description}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={touched.description && errors.description ? true : false}
+                            helperText={
+                                touched.description && errors.description ? errors.description : ''
+                            }
+                            fullWidth
                             multiline
                             rows={3}
-                            label="Description"
-                            type="description"
-                            id="description"
-                            fullWidth
                         />
-                        <TextField
+                        {/* <TextField
                             error={touched.login && errors.login ? true : false}
-                            defaultValue={values.login}
+                            defaultValue={values.publicationTime}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             helperText={touched.login && errors.login ? errors.login : ''}
                             variant="outlined"
                             margin="normal"
                             type="number"
-                            id="price"
-                            label="Price"
-                            name="price"
+                            id="publicationDate"
+                            label="Publication Date"
+                            name="publicationDate"
                             fullWidth
-                        />
+                        /> */}
                         <TextField
-                            error={touched.login && errors.login ? true : false}
-                            defaultValue={values.login}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            helperText={touched.login && errors.login ? errors.login : ''}
-                            variant="outlined"
-                            margin="normal"
+                            id="readingTime"
+                            name="readingTime"
                             type="number"
-                            id="reading-time"
                             label="Reading time"
-                            name="reading-time"
+                            variant="outlined"
+                            margin="normal"
+                            defaultValue={values.readingTime}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={touched.readingTime && errors.readingTime ? true : false}
+                            helperText={
+                                touched.readingTime && errors.readingTime ? errors.readingTime : ''
+                            }
                             fullWidth
                         />
                         <TextField
-                            error={touched.login && errors.login ? true : false}
-                            defaultValue={values.login}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            helperText={touched.login && errors.login ? errors.login : ''}
+                            id="image"
+                            name="image"
+                            label="Link to image"
                             variant="outlined"
                             margin="normal"
-                            id="image"
-                            label="Link to image ('jpg' or 'png')"
-                            name="image"
+                            defaultValue={values.image}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={touched.image && errors.image ? true : false}
+                            helperText={touched.image && errors.image ? errors.image : ''}
                             fullWidth
                         />
                         <Button
