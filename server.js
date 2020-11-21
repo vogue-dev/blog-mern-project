@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 import europeRouter from './routes/postsEu.js';
 import ukraineRoutes from './routes/postsUa.js';
 
-// ---- ---- ---- ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 const app = express();
 const PORT = process.env.PORT || 5000;
