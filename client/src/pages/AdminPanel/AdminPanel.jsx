@@ -2,12 +2,14 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import AddPost from './Posts/AddPost';
 import DeletePost from './Posts/DeletePost';
+import EuropePosts from './Posts/EuropePosts';
+import UkrainePosts from './Posts/UkrainePosts';
+import Profile from './Profile/Profile.jsx';
 import clsx from 'clsx';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
@@ -173,15 +175,17 @@ const AdminPanel = () => {
                     <Divider />
                     <div className={classes.list}>
                         <List component="nav" aria-label="main mailbox folders">
-                            <ListItem
-                                button
-                                selected={selectedIndex === 0}
-                                onClick={(event) => handleListItemClick(event, 0)}>
-                                <ListItemIcon>
-                                    <InboxIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Мой профиль" />
-                            </ListItem>
+                            <Link to="/admin/profile">
+                                <ListItem
+                                    button
+                                    selected={selectedIndex === 0}
+                                    onClick={(event) => handleListItemClick(event, 0)}>
+                                    <ListItemIcon>
+                                        <InboxIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Мой профиль" />
+                                </ListItem>
+                            </Link>
                             {/* <ListItem
                                 button
                                 selected={selectedIndex === 1}
@@ -193,7 +197,12 @@ const AdminPanel = () => {
                             </ListItem> */}
                             <ListItem
                                 button
-                                selected={selectedIndex === 2 || selectedIndex === 3}
+                                selected={
+                                    selectedIndex === 2 ||
+                                    selectedIndex === 3 ||
+                                    selectedIndex === 10 ||
+                                    selectedIndex === 11
+                                }
                                 onClick={handleCollapse}>
                                 <ListItemIcon>
                                     <InboxIcon />
@@ -203,6 +212,30 @@ const AdminPanel = () => {
                             </ListItem>
                             <Collapse in={openCollapse} timeout="auto" unmountOnExit>
                                 <List component="div" disablePadding>
+                                    <Link to="/admin/europe-posts">
+                                        <ListItem
+                                            button
+                                            className={classes.nested}
+                                            selected={selectedIndex === 10}
+                                            onClick={(event) => handleListItemClick(event, 10)}>
+                                            <ListItemIcon>
+                                                <StarBorder />
+                                            </ListItemIcon>
+                                            <ListItemText primary="Все Europe" />
+                                        </ListItem>
+                                    </Link>
+                                    <Link to="/admin/ukraine-posts">
+                                        <ListItem
+                                            button
+                                            className={classes.nested}
+                                            selected={selectedIndex === 11}
+                                            onClick={(event) => handleListItemClick(event, 11)}>
+                                            <ListItemIcon>
+                                                <StarBorder />
+                                            </ListItemIcon>
+                                            <ListItemText primary="Все Ukraine" />
+                                        </ListItem>
+                                    </Link>
                                     <Link to="/admin/add-post">
                                         <ListItem
                                             button
@@ -257,8 +290,11 @@ const AdminPanel = () => {
                     })}>
                     <div className={classes.drawerHeader} />
                     <Switch>
+                        <Route path="/admin/profile" component={Profile} />
                         <Route path="/admin/add-post" component={AddPost} />
                         <Route path="/admin/delete-post" component={DeletePost} />
+                        <Route path="/admin/europe-posts" component={EuropePosts} />
+                        <Route path="/admin/ukraine-posts" component={UkrainePosts} />
                     </Switch>
                     {/* <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

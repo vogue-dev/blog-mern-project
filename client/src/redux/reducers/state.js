@@ -1,6 +1,6 @@
 const initialState = {
-    postsUa: [],
     postsEu: [],
+    postsUa: [],
     isLoaded: false,
     isAdmin: false,
 };

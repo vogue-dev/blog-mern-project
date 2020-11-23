@@ -207,7 +207,7 @@ export default function HideAppBar(props) {
                                     }}
                                     open={open}
                                     onClose={handleClose}>
-                                    <Link to="/admin">
+                                    <Link to="/admin/profile">
                                         <MenuItem onClick={handleClose}>Мой профиль</MenuItem>
                                     </Link>
                                 </Menu>
