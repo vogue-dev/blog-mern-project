@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -10,7 +10,40 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+
+const links = [
+    {
+        text: 'Home',
+        link: '/',
+    },
+    {
+        text: 'По Европе',
+        link: '/europe',
+    },
+    {
+        text: 'По Украине',
+        link: '/ukraine',
+    },
+    {
+        text: 'Новости',
+        link: '/news',
+    },
+    {
+        text: 'Блог',
+        link: '/blog',
+    },
+];
+
+const adminLinks = [
+    {
+        text: 'My Profile',
+        link: '/admin/profile',
+    },
+    {
+        text: 'Login',
+        link: '/login',
+    },
+];
 
 const useStyles = makeStyles({
     list: {
@@ -26,31 +59,37 @@ export default function SwipeableTemporaryDrawer() {
     const dispatch = useDispatch();
     const swipiableMobilePanel = useSelector(({ state }) => state.swipiableMobilePanel);
 
-    const toggleDrawer = (value) => {
+    const toggleDrawer = () => {
         dispatch({ type: 'SET_SWIPABLE_MOBILE_PANEL', payload: !swipiableMobilePanel });
     };
 
-    const list = (anchor) => (
+    const list = () => (
         <div className={classes.list} role="presentation">
+            <ListItem>LOGO</ListItem>
+            <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
+                {links.map(({ text, link }, index) => (
+                    <Link to={link} key={index}>
+                        <ListItem button key={text}>
+                            <ListItemIcon>
+                                <InboxIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
+                {adminLinks.map(({ text, link }, index) => (
+                    <Link to={link} key={index}>
+                        <ListItem button key={text}>
+                            <ListItemIcon>
+                                <InboxIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
         </div>
