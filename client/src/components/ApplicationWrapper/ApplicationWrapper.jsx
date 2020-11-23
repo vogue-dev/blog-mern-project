@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Toasts from '../Toasts/Toasts.jsx';
+import SwipiableMobilePanel from '../SwipiableMobilePanel/SwipiableMobilePanel.jsx';
 
 import './application-wrapper.scss';
 
@@ -20,6 +21,7 @@ const ContentWrapper = styled.div`
 const ApplicationWrapper = ({ path, exact, component, name }) => {
     return (
         <>
+            <SwipiableMobilePanel />
             <Toasts />
             <Header />
             <ContentWrapper>

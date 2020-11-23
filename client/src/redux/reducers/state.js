@@ -3,6 +3,7 @@ const initialState = {
     postsUa: [],
     isLoaded: false,
     isAdmin: false,
+    swipiableMobilePanel: false,
 };
 
 const posts = (state = initialState, action) => {
@@ -25,6 +26,12 @@ const posts = (state = initialState, action) => {
             return {
                 ...state,
                 isAdmin: action.payload,
+            };
+
+        case 'SET_SWIPABLE_MOBILE_PANEL':
+            return {
+                ...state,
+                swipiableMobilePanel: action.payload,
             };
 
         // case 'SET_CURRENT_PAGE':

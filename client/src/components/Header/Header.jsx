@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -128,8 +128,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HideAppBar(props) {
-    const isAdmin = useSelector(({ state }) => state.isAdmin);
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const isAdmin = useSelector(({ state }) => state.isAdmin);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
@@ -155,7 +156,10 @@ export default function HideAppBar(props) {
                             edge="start"
                             className={classes.menuButton}
                             color="inherit"
-                            aria-label="open drawer">
+                            aria-label="open drawer"
+                            onClick={() =>
+                                dispatch({ type: 'SET_SWIPABLE_MOBILE_PANEL', payload: true })
+                            }>
                             <MenuIcon />
                         </IconButton>
 
