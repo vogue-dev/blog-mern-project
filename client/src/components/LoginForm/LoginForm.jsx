@@ -69,7 +69,7 @@ const LoginForm = () => {
         onSubmit: ({ login, password }) => {
             dispatch(setAdmin(true));
             alert('Login success!');
-            history.push('/admin');
+            history.push('/admin/profile');
         },
     });
 
