@@ -98,7 +98,7 @@ export default function CenteredGrid() {
                     <Paper className={classes.paper}>
                         <div>
                             <div className={classes.images}>
-                                <div class={classes.background}>
+                                <div className={classes.background}>
                                     <img
                                         className={classes.backgroundImg}
                                         src="https://image.freepik.com/free-photo/retro-vintage-camera-and-photographic-film-on-wooden-background_1204-382.jpg"

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -98,7 +97,6 @@ export default function SwipeableTemporaryDrawer() {
     return (
         <div>
             <React.Fragment key={'left'}>
-                <Button onClick={() => toggleDrawer(true)}>{'left'}</Button>
                 <SwipeableDrawer
                     anchor={'left'}
                     open={swipiableMobilePanel}

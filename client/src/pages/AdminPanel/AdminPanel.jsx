@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import AddPost from './Posts/AddPost';
 import DeletePost from './Posts/DeletePost';
 import EuropePosts from './Posts/EuropePosts';
@@ -29,6 +30,7 @@ import {
     ListItemIcon,
     ListItemText,
     Collapse,
+    Button,
 } from '@material-ui/core';
 
 const drawerWidth = 240;
@@ -65,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
+    },
+    adminText: {
+        flexGrow: 1,
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -111,9 +116,17 @@ const useStyles = makeStyles((theme) => ({
     nested: {
         paddingLeft: theme.spacing(4),
     },
+    logoutButton: {
+        backgroundColor: theme.palette.background.paper,
+
+        '&: hover': {
+            backgroundColor: theme.palette.secondary.main,
+        },
+    },
 }));
 
 const AdminPanel = () => {
+    const dispatch = useDispatch();
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);
@@ -136,6 +149,11 @@ const AdminPanel = () => {
         setOpen(false);
     };
 
+    const logout = () => {
+        if (window.confirm('Are you shure?') === true) {
+            dispatch({ type: 'SET_LOGIN', payload: { isAdmin: false, rememberMe: false } });
+        }
+    };
     return (
         <>
             <div className={classes.adminPanel}>
@@ -154,9 +172,14 @@ const AdminPanel = () => {
                             className={clsx(classes.menuButton, open && classes.hide)}>
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="h6" noWrap>
-                            Admin Panel
-                        </Typography>
+                        <div className={classes.adminText}>
+                            <Typography variant="h6" noWrap>
+                                Admin Panel
+                            </Typography>
+                        </div>
+                        <Button className={classes.logoutButton} onClick={logout}>
+                            Logout
+                        </Button>
                     </Toolbar>
                 </AppBar>
                 <Drawer

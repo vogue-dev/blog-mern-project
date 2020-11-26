@@ -7,6 +7,8 @@ import './index.scss';
 import App from './App';
 import store from './redux/store.js';
 
+console.log('store', store.getState().state.isAdmin);
+
 ReactDOM.render(
     <Router>
         <Provider store={store}>

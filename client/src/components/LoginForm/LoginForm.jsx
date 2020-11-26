@@ -57,6 +57,7 @@ const LoginForm = () => {
         initialValues: {
             login: '',
             password: '',
+            rememberMe: false,
         },
         validationSchema: Yup.object({
             login: Yup.string()
@@ -66,15 +67,20 @@ const LoginForm = () => {
                 .min(5, 'Password must be longer than 5 characters')
                 .required('Enter Password'),
         }),
-        onSubmit: ({ login, password }) => {
-            dispatch(setAdmin(true));
+        onSubmit: () => {
+            dispatch(setAdmin(true, values.rememberMe));
             alert('Login success!');
             history.push('/admin/profile');
         },
     });
 
+    // const onChangeRememberMe = (param, rememberMe) => {
+    //     dispatch({ type: 'SET_REMEMBER_ME', payload: param });
+    // };
+
     return (
         <Container component="main" maxWidth="xs">
+            {console.log('values', values)}
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
@@ -113,8 +119,15 @@ const LoginForm = () => {
                         fullWidth
                     />
                     <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me (doesn't work now)"
+                        control={
+                            <Checkbox
+                                id="rememberMe"
+                                value="remember"
+                                color="primary"
+                                onChange={handleChange}
+                            />
+                        }
+                        label="Remember me"
                     />
                     <Button
                         type="submit"

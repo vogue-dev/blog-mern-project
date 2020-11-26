@@ -11,12 +11,17 @@ export const fetchingPostsUa = (helper) => (dispatch) => {
     axios.get(`${baseUrl}/${helper}`).then((response) => dispatch(setPostsUa(response.data)));
 };
 
-export const setAdmin = (param) => async (dispatch) => {
-    dispatch(setLogin(param));
+export const setAdmin = (isAdmin, rememberMe) => async (dispatch) => {
+    dispatch({ type: 'SET_LOGIN', payload: { isAdmin, rememberMe } });
 };
 
-export const setLogin = (param) => ({
-    type: 'SET_LOGIN',
+// export const setLogin = (param) => ({
+//     type: 'SET_LOGIN',
+//     payload: param,
+// });
+
+export const setRememberMe = (param) => ({
+    type: 'SET_REMEMBER_ME',
     payload: param,
 });
 
